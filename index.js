@@ -103,9 +103,9 @@ JSHinter.prototype.testGenerator = function(relativePath, passed, errors) {
     errors = ""
   }
 
-  return "module('JSHint - " + path.dirname(relativePath) + "');\n" +
+  return "suite('JSHint - " + path.dirname(relativePath) + "');\n" +
          "test('" + relativePath + " should pass jshint', function() { \n" +
-         "  ok(" + !!passed + ", '" + relativePath + " should pass jshint." + errors + "'); \n" +
+         !!passed +".should.be.ok; \n"+
          "});\n"
 };
 
